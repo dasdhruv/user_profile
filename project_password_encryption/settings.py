@@ -27,7 +27,7 @@ SECRET_KEY = '&incu55xs@zs*c)hz32u-=y$*yr4u(3t8axwe0onp2u&2p-rq*'
 # DEBUG = True
 DEBUG = bool(int (os.environ.get('DEBUG', 1)))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['dasdhruv.pythonanywhere.com',]
 
 
 # Application definition
