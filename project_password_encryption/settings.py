@@ -138,4 +138,4 @@ STATIC_URL = '/media/'
 
 LOGIN_URL = '/app_password_auth/user_login/'
 
-STATIC_ROOT = 'static/'
+
