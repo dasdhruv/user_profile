@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The Base HTML</title>
+    <link rel="stylesheet" href="{% static "/css/Capston.css" %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="nav navbar-default navbar-fixed-top navbar-inverse">
+
+        <div class="navbar-header">
+          <!-- <li><a class="navbar-brand" href="#">BRAND</a></li>
+          <li><a class="navbar-link" href="#">Admin</a></li>
+          <li><a class="navbar-link" href="#">Other</a></li> -->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <!--  Code for the hamburger icon-->
+            <span class="sr-only">Toggle navigation</span>
+            <!--code for dashes in hamburger-->
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- index is the name for idnex page which we have defined in the project's url.py file -->
+          <a class="navbar-brand" href="{% url 'index' %}">Welcome</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a class="navbar-link" href="{% url 'index' %}">Brand</a></li> <!-- index is the name we defined in the projects urls.py file -->
+            <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
+            <!-- app_password_auth is the app_name which we registred in our apps ulrs.py script -->
+            <!-- view_register is a name which we have defined in apps urls.py script  -->
+            <li><a class="navbar-link" href="{% url 'app_password_auth:view_register' %}">Register User</a></li>
+            <!-- If the user is authenticated then user will need a way to logout -->
+            {% if user.is_authenticated %}
+              <li><a class="navbar-link" href="{% url 'logout' %}">Logout</a></li><!--logout is the name we defined in the projects urls.py file -->
+            {% else %}
+              <li><a class="navbar-link" href="{% url 'app_password_auth:view_user_login' %}">Login User</a></li>
+            {% endif %}
+            <li><a class="navbar-link" href="{% url 'view_special' %}">Special View</a></li>
+          </ul>
+        </div>
+
+    </nav>
+
+        <div class="container">
+          {% block body_block %}
+          <!-- code for other html files which all will inherit this base.html file -->
+          {% endblock %}
+        </div>
+
+        <script
+       src="http://code.jquery.com/jquery-3.1.1.js"
+       integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+       crossorigin="anonymous"></script>  <!-- Latest compiled and minified JavaScript -->
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>

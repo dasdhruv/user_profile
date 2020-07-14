@@ -1,0 +1,13 @@
+span
+{
+  font-size: 25px;
+  color: green;
+}
+img{
+  width: 400px;
+  height:300px;
+  overflow:hidden;
+}
+h1{
+  padding-top: 35px;
+}
