@@ -5,11 +5,11 @@ set -e
 # TODO: Set to URL of git repo.
 PROJECT_GIT_URL='https://github.com/dasdhruv/user_profile.git'
 
-PROJECT_BASE_PATH='/usr/local/apps/user_profile'
+PROJECT_BASE_PATH='/usr/local/apps/project_password_encryption'
 
 echo "Installing dependencies..."
 apt-get update
-apt-get install -y python3-dev python3-venv sqlite python-pip3 supervisor nginx git
+apt-get install -y python3-dev python3-venv sqlite python-pip supervisor nginx git
 
 # Create project directory
 mkdir -p $PROJECT_BASE_PATH
